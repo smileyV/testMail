@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "MailCore/MailCore.h"
 @interface ViewController ()
 
 @end
@@ -26,4 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)click:(id)sender
+{
+    CTCoreAccount* Account = [[CTCoreAccount alloc]init];
+    [Account connectToServer:@"imap.aol.com" port:993 connectionType:CTConnectionTypeTLS authType:CTImapAuthTypePlain login:@"septemann@aol.com" password:@"office2000"];
+}
 @end
